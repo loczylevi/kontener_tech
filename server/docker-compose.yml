@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  barokkos:
+    image: python:3.7
+    container_name: server
+    command: python3 -m http.server 8000
+    ports:
+      - '8000:8000'
+    volumes:
+      - ../index.html:/app/index.html
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+      
